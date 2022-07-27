@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"golang-api/book"
 	"golang-api/handler"
 	"log"
@@ -23,49 +24,29 @@ func main() {
 	db.AutoMigrate(&book.Book{}) // migration
 
 	bookRepository := book.NewRepository(db)
-
-	// ############# GET BOOKS ###############
-	// books, err := bookRepository.GetBooks()
-
-	// for _, book := range books {
-	// 	fmt.Println("Title : ", book.Title)
-	// }
-	// #######################################
-
-	// ############## GET BOOK ###############
-	// book, _ := bookRepository.GetBook(7)
-
-	// fmt.Println("Title : ", book.Title)
-	// #######################################
+	bookService := book.NewService(bookRepository)
 
 	// ############## ADD BOOK ###############
-	// book := book.Book{
+	// bookInput := book.BookInput{
 	// 	Title:       "Who Came After Die?",
 	// 	Description: "Awesome book",
 	// 	Price:       90000,
 	// }
 
-	// bookRepository.AddBook(book)
+	// bookService.AddBook(bookInput)
 
-	// fmt.Println("Title : ", book.Title)
+	// fmt.Println("Title : ", bookInput.Title)
 	// #######################################
 
-	// ############ UPDATE BOOK ##############
-	// var book book.Book
+	// ############## GET BOOKS ###############
+	var books []book.Book
+	books, _ = bookService.GetBooks()
+	fmt.Println("Title : ", books)
 
-	// book, _ = bookRepository.GetBook(8)
-	// fmt.Println("Title : ", book.Title)
-
-	// book.Title = "Man Tiger Wong"
-	// bookRepository.UpdateBook(book)
-	// #######################################
-
-	// ############# DELETE BOOK #############
-	var book book.Book
-	book, _ = bookRepository.GetBook(8)
-
-	bookRepository.DeleteBook(book)
-	// #######################################
+	for _, book := range books {
+		fmt.Println("Title : ", book.Title)
+	}
+	// ########################################
 
 	router := gin.Default()
 

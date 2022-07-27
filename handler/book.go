@@ -51,8 +51,8 @@ func AddBookHandler(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{
-		"title":    bookInput.Title,
-		"price":    bookInput.Price,
-		"subTitle": bookInput.SubTitle,
+		"title":       bookInput.Title,
+		"price":       bookInput.Price,
+		"description": bookInput.Description,
 	})
 }
