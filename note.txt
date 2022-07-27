@@ -1,1 +1,3 @@
-repository bertanggung jawab thdp model, entity, dan tabel
+service bertanggung jawab bisnis logic (upload, add, dll)
+
+main => service => repository interface
