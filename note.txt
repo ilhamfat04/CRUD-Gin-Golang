@@ -1,15 +1,1 @@
-konek ke db
-
-import => (https://gorm.io/docs/connecting_to_the_database.html)
-    "gorm.io/driver/mysql"
-    "gorm.io/gorm"
-
-dsn := "root@tcp(127.0.0.1:3306)/golang-api?charset=utf8mb4&parseTime=True&loc=Local"
-	_, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-
-
-https://gorm.io/docs/sql_builder.html
-insert => Create()
-select => Find(), First(), Last()
-update => Save()
-delete => Delete()
+repository bertanggung jawab thdp model, entity, dan tabel
