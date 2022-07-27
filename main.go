@@ -50,20 +50,21 @@ func main() {
 	// fmt.Println("Title : ", book.Title)
 	// #######################################
 
-	// ############## ADD BOOK ###############
-	// book, _ := bookRepository.GetBook(8)
-
+	// ############ UPDATE BOOK ##############
 	// var book book.Book
 
 	// book, _ = bookRepository.GetBook(8)
 	// fmt.Println("Title : ", book.Title)
 
 	// book.Title = "Man Tiger Wong"
-	// bookRepository.UpdateBook(8, book)
+	// bookRepository.UpdateBook(book)
 	// #######################################
 
 	// ############# DELETE BOOK #############
+	var book book.Book
+	book, _ = bookRepository.GetBook(8)
 
+	bookRepository.DeleteBook(book)
 	// #######################################
 
 	router := gin.Default()
