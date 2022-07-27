@@ -36,8 +36,7 @@ func (r *repository) AddBook(book Book) (Book, error) {
 	return book, err
 }
 
-func (r *repository) UpdateBook(ID int) (Book, error) {
-	var book Book
-	err := r.db.Find(&book, ID).Error
+func (r *repository) UpdateBook(ID int, book Book) (Book, error) {
+	err := r.db.Save(&book).Error
 	return book, err
 }

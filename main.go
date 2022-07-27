@@ -51,7 +51,18 @@ func main() {
 	// #######################################
 
 	// ############## ADD BOOK ###############
-	book, _ := bookRepository.GetBook(8)
+	// book, _ := bookRepository.GetBook(8)
+
+	// var book book.Book
+
+	// book, _ = bookRepository.GetBook(8)
+	// fmt.Println("Title : ", book.Title)
+
+	// book.Title = "Man Tiger Wong"
+	// bookRepository.UpdateBook(8, book)
+	// #######################################
+
+	// ############# DELETE BOOK #############
 
 	// #######################################
 
