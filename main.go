@@ -53,7 +53,7 @@ func main() {
 	// ############ UPDATE BOOK ##############
 	// var book book.Book
 
-	// book, _ = bookRepository.GetBook(8)
+	// book, _ = bookRepository.GetBook(7)
 	// fmt.Println("Title : ", book.Title)
 
 	// book.Title = "Man Tiger Wong"
@@ -61,10 +61,10 @@ func main() {
 	// #######################################
 
 	// ############# DELETE BOOK #############
-	var book book.Book
-	book, _ = bookRepository.GetBook(8)
+	// var book book.Book
+	// book, _ = bookRepository.GetBook(7)
 
-	bookRepository.DeleteBook(book)
+	// bookRepository.DeleteBook(book)
 	// #######################################
 
 	router := gin.Default()
