@@ -6,8 +6,7 @@ type Repository interface {
 	GetBooks() ([]Book, error)
 	GetBook(ID int) (Book, error)
 	AddBook(book Book) (Book, error)
-	// UpdateBook(book Book) (Book, error)
-	// DeleteBook(book Book) (Book, error)
+	UpdateBook(book Book) (Book, error)
 }
 
 type repository struct {
@@ -37,10 +36,10 @@ func (r *repository) AddBook(book Book) (Book, error) { //book dari entity
 	return book, err
 }
 
-// func (r *repository) UpdateBook(book Book) error {
-// 	err := r.db.Save(&book).Error
-// 	return err
-// }
+func (r *repository) UpdateBook(book Book) (Book, error) {
+	err := r.db.Save(&book).Error
+	return book, err
+}
 
 // func (r *repository) DeleteBook(book Book) error {
 // 	err := r.db.Delete(&book).Error
